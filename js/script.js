@@ -8,18 +8,6 @@ const app = new Vue({
         task: 'Do boolean exercise',
         status: 'to-do',
       },
-      {
-        task: 'Do boolean exercise',
-        status: 'to-do',
-      },
-      {
-        task: 'Do boolean exercise',
-        status: 'to-do',
-      },
-      {
-        task: 'Do boolean exercise',
-        status: 'to-do',
-      },
     ],
   },
   methods: {
