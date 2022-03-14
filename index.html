@@ -26,9 +26,14 @@
                 <tbody>
                     <tr v-for="(task, index) in taskList" :key="index">
                         <th scope="row">{{ index + 1 }}</th>
-                        <td class="task">{{ taskList[index].name }}</td>
+                        <td>
+                            <span :class="{'finished' : task.status === 'Done' }">
+                                {{ taskList[index].name }}
+                            </span>
+                        </td>
                         <td class="text-end">
-                            <button @click="doneTask(index)" type="button" class="btn btn-success">Done</button>
+                            <button @click="doneTask(index)" type="button"
+                                class="btn btn-success"><span>{{ taskList[index].status }}</span></button>
                             <button @click="deleteTask(index)" type="button" class="btn btn-danger">Remove</button>
                         </td>
                     </tr>
