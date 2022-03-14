@@ -1,7 +1,6 @@
 const app = new Vue({
   el: '.app-container',
   data: {
-    activeIndex: 0,
     newTask: '',
     taskList: [
       {
@@ -13,17 +12,20 @@ const app = new Vue({
         status: 'To-do',
       },
     ],
+    statusAvailable: ['to-do', 'done'],
   },
   methods: {
     toDoTask() {
-      console.log(this.newTask);
       this.newTask.innerHTML = '';
-
       if (this.newTask.length === 0) return;
       this.taskList.push({
         name: this.newTask,
         status: 'to-do',
       });
+      this.newTask = '';
+    },
+    doneTask(index) {
+      this.taskList[index].name.style.textDecoration = 'underline overline';
     },
     deleteTask(index) {
       this.taskList.splice(index, 1);
