@@ -20,7 +20,7 @@ const app = new Vue({
       if (this.newTask.length === 0) return;
       this.taskList.push({
         name: this.newTask,
-        status: 'ToDo',
+        status: 'Todo',
       });
       this.newTask = '';
     },
