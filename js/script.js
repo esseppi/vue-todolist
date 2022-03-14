@@ -2,6 +2,7 @@ const app = new Vue({
   el: '.app-container',
   data: {
     activeIndex: 0,
+    newTask: '',
     taskList: [
       {
         task: 'Do boolean exercise',
@@ -21,6 +22,14 @@ const app = new Vue({
       },
     ],
   },
-  // methods: {
-  // },
+  methods: {
+    toDoTask() {
+      console.log(this.newTask);
+      if (this.newTask.length === 0) return;
+      this.taskList.push({
+        task: this.newTask,
+        status: 'to-do',
+      });
+    },
+  },
 });
